@@ -1,0 +1,66 @@
+.casualBlock {
+    width: 925px;
+    margin: 0 auto; /* Центрируем блок */
+    background-color: #f8f8f8; /* Легкий фон */
+    border-radius: 10px; /* Скругленные углы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для глубины */
+}
+
+.casualBlock .flexItem {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Расстояние между элементами */
+}
+
+.flexItem .item {
+    position: relative;
+    width: 31%; /* Оставляем небольшую ширину для отступов */
+    background-color: #ffffff; /* Белый фон для каждого элемента */
+    border-radius: 8px; /* Скругленные углы */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для элемента */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавное увеличение при наведении */
+}
+
+.flexItem .item:hover {
+    transform: translateY(-10px); /* Подъем элемента при наведении */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Увеличиваем тень */
+}
+
+.flexItem .item .image {
+    width: 295px;
+    height: 285px; /* Адаптивное изображение */
+    border-radius: 8px; /* Скругляем углы изображений */
+    object-fit: cover; /* Обрезаем изображение по размеру */
+}
+
+.flexItem .item h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333; /* Темный текст */
+    margin-top: 15px;
+}
+
+.flexItem .item p {
+    font-size: 14px;
+    color: #777; /* Легкий серый для текста */
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.flexItem .item .cta-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007BFF; /* Синий цвет кнопки */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.flexItem .item .cta-btn:hover {
+    background-color: #0056b3; /* Темный синий при наведении */
+    transform: translateY(-2px); /* Поднимем кнопку */
+}

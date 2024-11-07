@@ -1,8 +1,10 @@
+import { Casual } from "../components";
 
 export const Category = () => {
+
     return (
         <div>
-            <h1>Category</h1>
+            <Casual />
         </div>
     );
 }

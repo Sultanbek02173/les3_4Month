@@ -3,8 +3,8 @@ import { Cart, Category, Detail, Home } from './pages';
 import './app.css'
 import cart from './img/Frame.svg';
 import user from './img/Frame(1).svg';
-import arrow from './img/Frame(2).svg'
-import searchIcon from './img/Vector.svg'
+import arrow from './img/Frame(2).svg';
+import searchIcon from './img/Vector.svg';
 import { useEffect, useRef, useState } from 'react';
 
 function App() {
@@ -61,7 +61,7 @@ function App() {
       
       <Routes>
         <Route path='/' element={<Home />}/>
-        <Route path='/detail' element={<Detail />}/>
+        <Route path='/detail/:id' element={<Detail />}/>
         <Route path='/category' element={<Category />}/>
         <Route path='/cart' element={<Cart />}/>
       </Routes>
