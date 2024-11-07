@@ -1,8 +1,12 @@
+import { Brands, DressStyle, NevArrivals, TopSelling } from "../components";
 
 export const Home = () => {
     return (
         <div>
-           <h1>Home</h1> 
+           <Brands />
+           <NevArrivals />
+           <TopSelling />
+           <DressStyle />
         </div>
     );
 }
