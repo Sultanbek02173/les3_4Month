@@ -5,7 +5,7 @@ import cart from './img/Frame.svg';
 import user from './img/Frame(1).svg';
 import arrow from './img/Frame(2).svg';
 import searchIcon from './img/Vector.svg';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 function App() {
 
@@ -17,18 +17,6 @@ function App() {
     setShowPageLinks(!showPageLinks);
   };
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (shopLinksRef.current && !shopLinksRef.current.contains(event.target)) {
-        setShowPageLinks(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
   return (
     <Router>
       <header className='header'>
@@ -37,12 +25,15 @@ function App() {
         </div>
         <div className='links'>
           <div className='shopLinks' onClick={togglePageLinks} ref={shopLinksRef}><p>Shop</p><img src={arrow} alt="" /></div>
-          <div className={`pageLinks ${showPageLinks ? 'visible' : ''}`}>
-            <p><Link to={'/'}>Home page</Link></p>
-            <p><Link to={'/category'}>Category page</Link></p>
-            <p><Link to={'/cart'}>Cart page</Link></p>
-          </div>
-          
+          {
+            showPageLinks ? (
+              <div className={`pageLinks`}>
+                <Link onClick={togglePageLinks} to={'/'}><p>Home page</p></Link>
+                <Link onClick={togglePageLinks} to={'/category'}><p>Category page</p></Link>
+                <Link onClick={togglePageLinks} to={'/cart'}><p>Cart page</p></Link>
+              </div>
+            ) : ""
+          }
           <p><a href="#on-sale">On Sale</a></p>
           <p><a href="#on-newArrivals">New Arrivals</a></p>
           <p><a href="#on-brands">Brands</a></p>

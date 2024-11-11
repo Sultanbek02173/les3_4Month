@@ -92,12 +92,9 @@ html{
 .pageLinks {
     background-color: #b8b8b85a;
     position: absolute;
-    z-index: 10;
+    z-index: 1;
     top: 30px;
-    opacity: 0;
     padding: 10px;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .pageLinks p{
@@ -127,8 +124,9 @@ html{
     width: 100%; 
 }
 
-.pageLinks.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
 
+
+.flexItem{
+    display: flex;
+    gap: 20px;
+}
