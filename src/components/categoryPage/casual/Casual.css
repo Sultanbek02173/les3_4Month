@@ -42,7 +42,7 @@
 }
 
 .item .image:hover {
-    transform: scale(1.1); /* Увеличение при наведении */
+    transform: scale(1.1);
 }
 
 .description{
@@ -112,4 +112,40 @@
 .description button:hover{
     background-color: #000000;
     color: #ffffff;
+}
+
+.casualBlock .pagination{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.pagination .btnPrevious button, .btnNext button{
+    padding: 8px 14px;
+    background-color: transparent;
+    border: 1px solid #0000001A;
+    border-radius: 8px;
+}
+
+.btnPrevious:hover button, .btnNext:hover button{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.btnPrevious:hover path, .btnNext:hover path{
+    stroke: #FFFFFF;
+}
+
+.btnPrevious svg, .btnNext svg{
+    margin-right: 8px;
+    padding-top: 4px;
+}
+
+.btnNext svg{
+    transform: rotateY(180deg);
+    margin-left: 8px;
+}
+
+.btnNext:hover path{
+    stroke: #FFFFFF;
 }

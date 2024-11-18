@@ -4,3 +4,6 @@ export { TopSelling } from './homePage/TopSelling/TopSelling';
 export { DressStyle } from './homePage/dressStyle/DressStyle';
 export { Casual } from './categoryPage/casual/Casual';
 export { Filter } from './categoryPage/filter/Filter';
+export { Header } from './header/Header';
+export { InfoProduct } from './detailPage/infoProduct/InfoProduct';
+export { PhotoSection } from './detailPage/photoSection/PhotoSection';

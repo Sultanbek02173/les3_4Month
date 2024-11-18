@@ -18,6 +18,10 @@ html{
     margin: 0 auto;
 }
 
+.category{
+    margin-bottom: 100px;
+}
+
 .header{
     width: 1240px;
     margin: 0 auto;
@@ -124,9 +128,17 @@ html{
     width: 100%; 
 }
 
-
-
 .flexItem{
     display: flex;
     gap: 20px;
+}
+
+.flexProduct{
+    display: flex;
+    gap: 40px;
+    margin-top: 36px;
+}
+
+.detailTitle svg{
+    margin: 0 14px;
 }

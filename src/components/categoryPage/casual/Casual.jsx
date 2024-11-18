@@ -1,28 +1,30 @@
-import { useEffect, useState } from "react";
-import axios from 'axios';
 import './Casual.css';
 import { Link } from "react-router-dom";
 import ReactStars from 'react-stars'
 
-export const Casual = () => {
+export const Casual = ({ currentPage, productsPerPage, totalProducts, filteredData, setCurrentPage }) => {
+    const indexOfLastProduct = currentPage * productsPerPage;
+    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+    const currentProducts = filteredData.slice(indexOfFirstProduct, indexOfLastProduct);
 
-    const [data, setData] = useState();
+    const nextPage = () => {
+        if (currentPage < Math.ceil(totalProducts / productsPerPage)) {
+            setCurrentPage((prevPage) => prevPage + 1);
+        }
+    };
 
-    useEffect(() => {
-        axios('https://fakestoreapi.com/products')
-        .then(({data}) => {
-            setData(data)
-            console.log(data);
-        })
-    }, [])
-
+    const prevPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage((prevPage) => prevPage - 1);
+        }
+    };
     return (
         <div className="casualBlock">
             <h1>Casual</h1>  
             <div className="flexItem">
                 {
-                    data && 
-                    data.map((product) => (
+                    currentProducts && 
+                    currentProducts.map((product) => (
                         <div key={product.id} className="product">
                             <div className="item">
                                 <img className="image" src={product.image} alt="Product img" />
@@ -49,6 +51,29 @@ export const Casual = () => {
                         
                     ))
                 }
+            </div>
+
+            <div className="pagination">
+                <div className='btnPrevious'>
+                    <button onClick={prevPage} disabled={currentPage === 1}>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.8332 6.99996H1.1665M1.1665 6.99996L6.99984 12.8333M1.1665 6.99996L6.99984 1.16663" stroke="black" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Previous
+                    </button>
+                </div>
+                <div>
+                    <span>Page {currentPage}</span>
+                </div>
+                <div className='btnNext'>
+                    <button onClick={nextPage} disabled={currentPage === Math.ceil(totalProducts / productsPerPage)}>
+                        Next
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.8332 6.99996H1.1665M1.1665 6.99996L6.99984 12.8333M1.1665 6.99996L6.99984 1.16663" stroke="black" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                
             </div>
             
         </div>

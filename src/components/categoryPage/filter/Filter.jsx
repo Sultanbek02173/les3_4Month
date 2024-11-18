@@ -5,11 +5,9 @@ import axios from 'axios'
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
-export const Filter = () => {
+export const Filter = ({ filterProducts, priceRange, setPriceRange, setSelect }) => {
 
     const [category, setCategory] = useState();
-    const [select, setSelect] = useState('all');
-    const [priceRange, setPriceRange] = useState([0, 500]); 
 
     useEffect(() => {
         axios('https://fakestoreapi.com/products/categories')
@@ -57,8 +55,8 @@ export const Filter = () => {
                 />
             </div>
 
-            <div className='button'>
-                <button>Go filter</button>
+            <div className='filterButton'>
+                <button onClick={filterProducts}>Go filter</button>
             </div>
 
         </aside>

@@ -3,7 +3,7 @@
     border: 1px solid #0000001A;
     border-radius: 20px;
     padding: 20px 24px;
-
+    height: 570px;
 }
 
 .asideBlock h2{
@@ -49,14 +49,11 @@
     color: #ff0000;
 }
 
- .asideBlock .category, .price{
+.asideBlock .category, .price{
     padding-bottom: 24px;
     margin-bottom: 24px;
     border-bottom: 1px solid #0000001A;
 }
-
-
-
 
 .custom-slider .rc-slider-rail {
   background-color: #F0F0F0; 
@@ -87,7 +84,11 @@
   outline: none;
 }
 
-.button button{
+.filterButton{
+    text-align: center;
+}
+
+.filterButton button{
     font-size: 14px;
     line-height: 21px;
     font-weight: 500;
@@ -98,7 +99,7 @@
     transition: .3s all;
 }
 
-.button button:hover{
+.filterButton button:hover{
     background-color: #000000;
     color: #ffffff;
 }
