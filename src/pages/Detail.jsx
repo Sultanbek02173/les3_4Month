@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import '../app.css';
 import { InfoProduct, PhotoSection } from "../components";
 
-export const Detail = () => {
+export const Detail = ({ addCart }) => {
     const [product, setProduct] = useState({});
     const item = useParams();
 
@@ -26,7 +26,7 @@ export const Detail = () => {
             </h1>
             <div className="flexProduct">
                 <PhotoSection product={product} />
-                <InfoProduct product={product} />
+                <InfoProduct product={product} addCart={addCart} />
             </div>
         </div>
     );

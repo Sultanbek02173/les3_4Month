@@ -1,7 +1,7 @@
 import ReactStars from 'react-stars';
 import './infoProduct.css'
 
-export const InfoProduct = ({ product }) => {
+export const InfoProduct = ({ product, addCart }) => {
     return (
         <div>
             {
@@ -22,7 +22,7 @@ export const InfoProduct = ({ product }) => {
                         </div>
                         <h3>${product.price}</h3>
                         <p>{product.description}</p>
-                        <button>Buy</button>
+                        <button onClick={() => addCart(product)}>Buy</button>
                     </div>
                 )
             }
