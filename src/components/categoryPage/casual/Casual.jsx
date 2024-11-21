@@ -45,7 +45,7 @@ export const Casual = ({ currentPage, productsPerPage, totalProducts, filteredDa
                                 </div>
                                 
                                 <h3>${product.price}</h3>
-                                <button onClick={addCart}>Buy</button>
+                                <button onClick={() => addCart(product)}>Buy</button>
                             </div>
                         </div>
                         
