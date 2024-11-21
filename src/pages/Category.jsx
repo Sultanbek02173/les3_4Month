@@ -3,7 +3,7 @@ import '../app.css'
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export const Category = () => {
+export const Category = ({ addCart }) => {
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -46,7 +46,7 @@ export const Category = () => {
         <div className="container category">
             <div className="flexItem">
                 <Filter filterProducts={filterProducts} priceRange={priceRange} setPriceRange={setPriceRange} setSelect={setSelect} />
-                <Casual currentPage={currentPage} productsPerPage={productsPerPage} totalProducts={totalProducts} filteredData={filteredData} setCurrentPage={setCurrentPage}  />
+                <Casual currentPage={currentPage} productsPerPage={productsPerPage} totalProducts={totalProducts} filteredData={filteredData} setCurrentPage={setCurrentPage} addCart={addCart} />
             </div>
             
         </div>

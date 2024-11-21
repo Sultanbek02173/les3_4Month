@@ -7,3 +7,5 @@ export { Filter } from './categoryPage/filter/Filter';
 export { Header } from './header/Header';
 export { InfoProduct } from './detailPage/infoProduct/InfoProduct';
 export { PhotoSection } from './detailPage/photoSection/PhotoSection';
+export { CartProduct } from './cartPage/cartProduct/CartProduct';
+export { OrderSum } from './cartPage/orderSum/OrderSum';
